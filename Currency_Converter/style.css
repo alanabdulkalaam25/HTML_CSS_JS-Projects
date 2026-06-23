@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+}
+
+body {
+  background-color: yellow;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: darkcyan;
+  color: aliceblue;
+  padding: 1.3rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.currency-container {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.currency-container select {
+  padding: 0.7rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+}
+
+.currency-container select option {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.currency-container input {
+  border: none;
+  background-color: transparent;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: aliceblue;
+  text-align: right;
+}
+
+.currency-container select:focus,
+.currency-container input:focus {
+  outline: none;
+}
+
+.exchange-rate {
+  font-size: 1.2rem;
+  font-weight: bold;
+}

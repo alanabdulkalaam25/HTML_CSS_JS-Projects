@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter - HTML/CSS/JS Projects</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Currency Converter</h1>
+      <div class="currency-container">
+        <select id="currency-first">
+          <option value="USD" selected>USD</option>
+          <option value="CAD">CAD</option>
+          <option value="AUD">AUD</option>
+          <option value="EUR">EUR</option>
+          <option value="JPY">JPY</option>
+          <option value="GBP">GBP</option>
+          <option value="INR">INR</option>
+          <option value="CNY">CNY</option>
+          <option value="KRW">KRW</option>
+          <option value="RUB">RUB</option>
+        </select>
+        <input type="number" id="worth-first" value="1" min="0" />
+      </div>
+      <div class="currency-container">
+        <select id="currency-second">
+          <option value="USD">USD</option>
+          <option value="CAD">CAD</option>
+          <option value="AUD">AUD</option>
+          <option value="EUR">EUR</option>
+          <option value="JPY">JPY</option>
+          <option value="GBP">GBP</option>
+          <option value="INR" selected>INR</option>
+          <option value="CNY">CNY</option>
+          <option value="KRW">KRW</option>
+          <option value="RUB">RUB</option>
+        </select>
+        <input type="number" id="worth-second" readonly />
+      </div>
+      <p class="exchange-rate" id="ex-rate"></p>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

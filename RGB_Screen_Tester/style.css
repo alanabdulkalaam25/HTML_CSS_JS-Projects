@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2em;
+}
+
+.btn-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  height: 3em;
+  width: 5em;
+  border: 0.1em solid #000000;
+  border-radius: 0.5em;
+  outline: none;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+  border: 0.1em solid #ffffff;
+}
