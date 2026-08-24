@@ -9,8 +9,14 @@
   <body>
     <div class="container">
       <h1>English Dictionary</h1>
-      <input id="input" type="text" placeholder="Seach a Word" />
-      <p id="infoTxt">Type a world and press ENTER!</p>
+      <label for="input" class="visually-hidden">Search a word</label>
+      <input
+        id="input"
+        type="text"
+        placeholder="Search a Word"
+        autocomplete="off"
+      />
+      <p id="infoTxt" aria-live="polite">Type a word and press ENTER!</p>
       <div class="result">
         <p>Word: <span class="title" id="title">hello</span></p>
         <p>Meaning: <span class="meaning" id="meaning">To say hi!</span></p>
