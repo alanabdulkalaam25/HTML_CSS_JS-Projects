@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: cursive, "Courier New", monospace;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: slateblue;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1.5rem;
+  background-color: white;
+  width: 25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px #0000004d;
+  overflow: hidden;
+}
+
+.month-name {
+  width: 100%;
+  background-color: orangered;
+  color: white;
+  padding: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.day-name {
+  font-size: 1.5rem;
+  color: darkgray;
+}
+
+.day-number {
+  font-size: 7rem;
+  font-weight: bold;
+}
+
+.year {
+  color: darkgray;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.border {
+  border: 1px solid red;
+}
