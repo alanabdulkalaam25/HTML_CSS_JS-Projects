@@ -3,26 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>English Dictionary - HTML/CSS/JS Projects</title>
+    <title>lexicon.sh — english dictionary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>English Dictionary</h1>
-      <label for="input" class="visually-hidden">Search a word</label>
-      <input
-        id="input"
-        type="text"
-        placeholder="Search a Word"
-        autocomplete="off"
-      />
-      <p id="infoTxt" aria-live="polite">Type a word and press ENTER!</p>
-      <div class="result">
-        <p>Word: <span class="title" id="title">hello</span></p>
-        <p>Meaning: <span class="meaning" id="meaning">To say hi!</span></p>
-        <audio src="" controls id="audio"></audio>
+    <main class="terminal" role="main">
+      <header class="term-bar">
+        <div class="term-id">
+          <span class="prompt-glyph">&gt;</span>
+          <span class="term-title">lexicon.sh</span>
+          <span class="term-sub">english dictionary daemon</span>
+        </div>
+        <div class="term-status">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>online</span>
+        </div>
+      </header>
+
+      <form class="query-row" id="queryForm">
+        <label for="input" class="visually-hidden">Search a word</label>
+        <span class="prompt-glyph" aria-hidden="true">query&gt;</span>
+        <input
+          id="input"
+          type="text"
+          placeholder="type a word, press enter"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button id="searchBtn" type="submit">run</button>
+      </form>
+
+      <div class="history-row">
+        <span class="history-label">history</span>
+        <div id="recentRow" class="history-list"></div>
       </div>
-    </div>
+
+      <section class="output-pane" id="outputPane" aria-live="polite">
+        <p class="idle-line" id="idleLine">
+          // standing by — type a word and press enter to query the lexicon
+        </p>
+
+        <div class="entry" id="entry" hidden>
+          <div class="entry-head">
+            <h2 id="title"></h2>
+            <span id="phonetic" class="phonetic"></span>
+          </div>
+          <div id="audioRow" class="audio-row"></div>
+          <div id="meaningsList" class="meanings-list"></div>
+          <p id="sourceRow" class="source-row"></p>
+        </div>
+      </section>
+    </main>
+
     <script src="./script.js"></script>
   </body>
 </html>
