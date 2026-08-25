@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Kanban Board - HTML/CSS/JS Projects</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="app">
+      <!-- Header -->
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">TASK MANAGEMENT</p>
+          <h1>Kanban Board</h1>
+          <p class="subtitle">
+            Organize your work and keep track of your progress.
+          </p>
+        </div>
+
+        <div class="total-tasks">
+          <span id="totalTasks">0</span>
+          <small>Total Tasks</small>
+        </div>
+      </header>
+
+      <!-- Add Task -->
+      <section class="add-task-section">
+        <form id="taskForm">
+          <div class="input-wrapper">
+            <input
+              type="text"
+              id="taskInput"
+              placeholder="What needs to be done?"
+              maxlength="100"
+              autocomplete="off"
+            />
+
+            <span id="characterCount">0/100</span>
+          </div>
+
+          <button type="submit" class="add-btn">
+            <span>+</span>
+            Add Task
+          </button>
+        </form>
+      </section>
+
+      <!-- Kanban Board -->
+      <section class="board">
+        <!-- TO DO -->
+        <div class="column" data-status="todo" id="todoColumn">
+          <div class="column-header">
+            <div class="column-title">
+              <span class="status-dot todo-dot"></span>
+
+              <h2>To Do</h2>
+
+              <span class="task-count" id="todoCount"> 0 </span>
+            </div>
+          </div>
+
+          <div class="task-list" id="todoList"></div>
+        </div>
+
+        <!-- IN PROGRESS -->
+        <div class="column" data-status="progress" id="progressColumn">
+          <div class="column-header">
+            <div class="column-title">
+              <span class="status-dot progress-dot"></span>
+
+              <h2>In Progress</h2>
+
+              <span class="task-count" id="progressCount"> 0 </span>
+            </div>
+          </div>
+
+          <div class="task-list" id="progressList"></div>
+        </div>
+
+        <!-- DONE -->
+        <div class="column" data-status="done" id="doneColumn">
+          <div class="column-header">
+            <div class="column-title">
+              <span class="status-dot done-dot"></span>
+
+              <h2>Done</h2>
+
+              <span class="task-count" id="doneCount"> 0 </span>
+            </div>
+          </div>
+
+          <div class="task-list" id="doneList"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
