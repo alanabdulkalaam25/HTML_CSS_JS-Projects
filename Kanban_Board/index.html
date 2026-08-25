@@ -27,7 +27,7 @@
           id="themeToggle"
           class="theme-toggle"
           aria-label="Switch to dark theme"
-          title="Switch theme"
+          title="Switch to dark theme"
         >
           <span id="themeIcon">☾</span>
         </button>
@@ -39,27 +39,9 @@
     ========================== -->
 
     <main class="app">
-      <!-- Header -->
-
-      <header class="app-header">
-        <div>
-          <p class="eyebrow">TASK MANAGEMENT</p>
-
-          <h2>Stay organized. Get things done.</h2>
-
-          <p class="subtitle">
-            Drag tasks anywhere across the board to organize your workflow.
-          </p>
-        </div>
-
-        <div class="total-tasks">
-          <span id="totalTasks">0</span>
-
-          <small>Total Tasks</small>
-        </div>
-      </header>
-
-      <!-- Add Task -->
+      <!-- =========================
+             ADD TASK
+        ========================== -->
 
       <section class="add-task-section">
         <form id="taskForm">
@@ -72,7 +54,13 @@
               autocomplete="off"
             />
 
-            <span id="characterCount">0/100</span>
+            <!-- Total tasks embedded inside input -->
+            <div class="total-tasks" title="Total tasks">
+              <span id="totalTasks">0</span>
+              <small>Tasks</small>
+            </div>
+
+            <span id="characterCount" class="character-count"> 0/100 </span>
           </div>
 
           <button type="submit" class="add-btn">
@@ -94,14 +82,10 @@
             <div class="column-title">
               <span class="status-dot todo-dot"></span>
 
-              <h3>To Do</h3>
+              <h2>To Do</h2>
 
               <span class="task-count" id="todoCount"> 0 </span>
             </div>
-
-            <span class="column-description">
-              Tasks waiting to be started
-            </span>
           </div>
 
           <div class="task-list" id="todoList" data-status="todo"></div>
@@ -114,14 +98,10 @@
             <div class="column-title">
               <span class="status-dot progress-dot"></span>
 
-              <h3>In Progress</h3>
+              <h2>In Progress</h2>
 
               <span class="task-count" id="progressCount"> 0 </span>
             </div>
-
-            <span class="column-description">
-              Tasks currently being worked on
-            </span>
           </div>
 
           <div class="task-list" id="progressList" data-status="progress"></div>
@@ -134,14 +114,10 @@
             <div class="column-title">
               <span class="status-dot done-dot"></span>
 
-              <h3>Done</h3>
+              <h2>Done</h2>
 
               <span class="task-count" id="doneCount"> 0 </span>
             </div>
-
-            <span class="column-description">
-              Successfully completed tasks
-            </span>
           </div>
 
           <div class="task-list" id="doneList" data-status="done"></div>

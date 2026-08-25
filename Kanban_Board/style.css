@@ -1,6 +1,6 @@
-/* =========================
+/* ========================================
    RESET
-========================= */
+======================================== */
 
 * {
   margin: 0;
@@ -8,76 +8,110 @@
   box-sizing: border-box;
 }
 
-/* =========================
+/* ========================================
    THEME VARIABLES
-========================= */
+======================================== */
 
 :root {
   --background: #f5f7fb;
+
   --surface: #ffffff;
-  --surface-secondary: #f8f9fc;
+
+  --surface-secondary: #f7f8fb;
+
   --column: #eef1f6;
 
-  --border: #e2e6ee;
+  --border: #e0e5ed;
 
   --text: #1d2433;
-  --text-secondary: #6f7788;
-  --text-tertiary: #9aa1ae;
+
+  --text-secondary: #727b8c;
+
+  --text-tertiary: #9ca4b2;
 
   --primary: #5b5bf7;
-  --primary-hover: #4848dc;
+
+  --primary-hover: #4949dc;
 
   --todo: #64748b;
+
   --progress: #f59e0b;
+
   --done: #10b981;
 
   --danger: #ef4444;
 
   --navbar-background: rgba(255, 255, 255, 0.88);
 
+  --scrollbar-track: #e9edf3;
+
+  --scrollbar-thumb: #c5ccd8;
+
+  --scrollbar-thumb-hover: #aeb7c5;
+
   --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
 
-  --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 8px 25px rgba(15, 23, 42, 0.08);
 
   --radius: 16px;
 
   color-scheme: light;
 }
 
-/* =========================
+/* ========================================
    DARK THEME
-========================= */
+======================================== */
 
 body.dark-theme {
   --background: #0f1117;
+
   --surface: #181b23;
+
   --surface-secondary: #20242e;
+
   --column: #171a22;
 
   --border: #2b303c;
 
   --text: #f1f3f7;
-  --text-secondary: #a5acbb;
-  --text-tertiary: #737b8b;
+
+  --text-secondary: #a4acbb;
+
+  --text-tertiary: #737c8d;
 
   --primary: #7777ff;
-  --primary-hover: #8888ff;
+
+  --primary-hover: #8989ff;
 
   --navbar-background: rgba(18, 21, 28, 0.9);
 
+  --scrollbar-track: #171a21;
+
+  --scrollbar-thumb: #3a404c;
+
+  --scrollbar-thumb-hover: #4b5362;
+
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
 
-  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.3);
 
   color-scheme: dark;
 }
 
-/* =========================
+/* ========================================
    BODY
-========================= */
+======================================== */
+
+html {
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+
+  scrollbar-width: thin;
+}
 
 body {
   min-height: 100vh;
+
+  overflow-x: hidden;
 
   font-family:
     Inter,
@@ -101,18 +135,47 @@ body {
     color 0.25s ease;
 }
 
-/* =========================
+/* ========================================
+   CUSTOM SCROLLBAR
+======================================== */
+
+/* Chrome / Edge / Safari */
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+
+  border: 2px solid var(--scrollbar-track);
+
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* ========================================
    NAVBAR
-========================= */
+======================================== */
 
 .navbar {
   position: sticky;
+
   top: 0;
+
   z-index: 100;
 
   width: 100%;
 
-  height: 70px;
+  height: 68px;
 
   display: grid;
 
@@ -120,7 +183,7 @@ body {
 
   align-items: center;
 
-  padding: 0 32px;
+  padding: 0 30px;
 
   background: var(--navbar-background);
 
@@ -143,7 +206,9 @@ body {
   text-align: center;
 }
 
-/* Navbar left */
+/* ========================================
+   NAVBAR BRAND
+======================================== */
 
 .navbar-side {
   display: flex;
@@ -153,11 +218,13 @@ body {
 
 .navbar-brand {
   width: 36px;
+
   height: 36px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   border-radius: 10px;
@@ -173,23 +240,23 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* Navbar right */
-
 .navbar-actions {
   justify-content: flex-end;
 }
 
-/* =========================
-   THEME BUTTON
-========================= */
+/* ========================================
+   THEME TOGGLE
+======================================== */
 
 .theme-toggle {
   width: 42px;
+
   height: 42px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   border: 1px solid var(--border);
@@ -220,120 +287,55 @@ body {
   transform: translateY(0);
 }
 
-/* =========================
+/* ========================================
    APP
-========================= */
+======================================== */
 
 .app {
   width: min(1400px, 94%);
 
+  height: calc(100vh - 68px);
+
+  min-height: 500px;
+
   margin: 0 auto;
 
-  padding: 45px 0 60px;
-}
-
-/* =========================
-   HEADER
-========================= */
-
-.app-header {
-  display: flex;
-
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 30px;
-
-  margin-bottom: 28px;
-}
-
-.eyebrow {
-  margin-bottom: 7px;
-
-  color: var(--primary);
-
-  font-size: 11px;
-
-  font-weight: 800;
-
-  letter-spacing: 1.5px;
-}
-
-.app-header h2 {
-  font-size: clamp(27px, 3vw, 40px);
-
-  line-height: 1.15;
-
-  letter-spacing: -1.2px;
-}
-
-.subtitle {
-  margin-top: 9px;
-
-  color: var(--text-secondary);
-
-  font-size: 14px;
-}
-
-/* Total tasks */
-
-.total-tasks {
-  min-width: 110px;
+  padding: 22px 0 24px;
 
   display: flex;
 
   flex-direction: column;
-
-  align-items: center;
-
-  padding: 14px 20px;
-
-  border: 1px solid var(--border);
-
-  border-radius: 14px;
-
-  background: var(--surface);
-
-  box-shadow: var(--shadow-sm);
 }
 
-.total-tasks span {
-  font-size: 25px;
-
-  font-weight: 800;
-}
-
-.total-tasks small {
-  margin-top: 2px;
-
-  color: var(--text-secondary);
-
-  font-size: 11px;
-}
-
-/* =========================
+/* ========================================
    ADD TASK
-========================= */
+======================================== */
 
 .add-task-section {
-  margin-bottom: 28px;
+  flex-shrink: 0;
+
+  margin-bottom: 18px;
 }
 
 #taskForm {
   display: flex;
 
-  gap: 12px;
+  gap: 10px;
 
-  padding: 9px;
+  padding: 8px;
 
   background: var(--surface);
 
   border: 1px solid var(--border);
 
-  border-radius: 18px;
+  border-radius: 17px;
 
   box-shadow: var(--shadow-md);
 }
+
+/* ========================================
+   INPUT
+======================================== */
 
 .input-wrapper {
   position: relative;
@@ -346,13 +348,13 @@ body {
 #taskInput {
   width: 100%;
 
-  height: 52px;
+  height: 50px;
 
-  padding: 0 65px 0 18px;
+  padding: 0 140px 0 17px;
 
   border: 1px solid transparent;
 
-  border-radius: 12px;
+  border-radius: 11px;
 
   outline: none;
 
@@ -377,34 +379,96 @@ body {
   color: var(--text-tertiary);
 }
 
-#characterCount {
+/* ========================================
+   EMBEDDED TOTAL TASKS
+======================================== */
+
+.total-tasks {
   position: absolute;
 
-  right: 15px;
+  right: 45px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  height: 34px;
+
+  min-width: 66px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  padding: 0 9px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 9px;
+
+  background: var(--surface);
+
+  color: var(--text-secondary);
+
+  pointer-events: none;
+}
+
+.total-tasks span {
+  font-size: 13px;
+
+  font-weight: 800;
+
+  color: var(--text);
+}
+
+.total-tasks small {
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+/* Character counter */
+
+.character-count {
+  position: absolute;
+
+  right: 12px;
+
   top: 50%;
 
   transform: translateY(-50%);
 
   color: var(--text-tertiary);
 
-  font-size: 11px;
+  font-size: 10px;
 }
 
-.add-btn {
-  height: 52px;
+/* ========================================
+   ADD BUTTON
+======================================== */
 
-  padding: 0 22px;
+.add-btn {
+  height: 50px;
+
+  flex-shrink: 0;
+
+  padding: 0 21px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   gap: 7px;
 
   border: none;
 
-  border-radius: 12px;
+  border-radius: 11px;
 
   background: var(--primary);
 
@@ -417,13 +481,13 @@ body {
   cursor: pointer;
 
   transition:
-    background 0.2s,
-    transform 0.2s,
-    box-shadow 0.2s;
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .add-btn span {
-  font-size: 22px;
+  font-size: 21px;
 
   line-height: 1;
 }
@@ -433,33 +497,39 @@ body {
 
   transform: translateY(-1px);
 
-  box-shadow: 0 7px 16px rgba(91, 91, 247, 0.25);
+  box-shadow: 0 6px 15px rgba(91, 91, 247, 0.25);
 }
 
-/* =========================
+/* ========================================
    BOARD
-========================= */
+======================================== */
 
 .board {
+  flex: 1;
+
+  min-height: 0;
+
   display: grid;
 
   grid-template-columns: repeat(3, minmax(0, 1fr));
 
-  gap: 20px;
+  gap: 18px;
 }
 
-/* =========================
+/* ========================================
    COLUMN
-========================= */
+======================================== */
 
 .column {
-  min-height: 570px;
+  min-width: 0;
+
+  min-height: 0;
 
   display: flex;
 
   flex-direction: column;
 
-  padding: 20px;
+  padding: 17px;
 
   background: var(--column);
 
@@ -470,12 +540,11 @@ body {
   box-shadow: var(--shadow-sm);
 
   transition:
-    background 0.25s,
-    border-color 0.25s,
-    box-shadow 0.25s;
+    background 0.25s ease,
+    border-color 0.25s ease;
 }
 
-/* Active drop target */
+/* Drop target */
 
 .column.drag-over {
   border-color: var(--primary);
@@ -486,12 +555,14 @@ body {
     color-mix(in srgb, var(--primary) 12%, transparent);
 }
 
-/* =========================
+/* ========================================
    COLUMN HEADER
-========================= */
+======================================== */
 
 .column-header {
-  margin-bottom: 18px;
+  flex-shrink: 0;
+
+  margin-bottom: 12px;
 }
 
 .column-title {
@@ -502,31 +573,24 @@ body {
   gap: 9px;
 }
 
-.column-title h3 {
-  font-size: 17px;
+.column-title h2 {
+  font-size: 16px;
 
   font-weight: 750;
 }
 
-.column-description {
-  display: block;
-
-  margin-top: 6px;
-
-  color: var(--text-tertiary);
-
-  font-size: 11px;
-}
-
-/* Status */
+/* ========================================
+   STATUS DOTS
+======================================== */
 
 .status-dot {
   width: 9px;
+
   height: 9px;
 
-  border-radius: 50%;
-
   flex-shrink: 0;
+
+  border-radius: 50%;
 }
 
 .todo-dot {
@@ -541,78 +605,112 @@ body {
   background: var(--done);
 }
 
-/* Count */
+/* ========================================
+   TASK COUNT
+======================================== */
 
 .task-count {
-  min-width: 25px;
-  height: 25px;
+  min-width: 24px;
+
+  height: 24px;
 
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 
-  margin-left: 2px;
+  margin-left: 1px;
 
-  border-radius: 8px;
+  border-radius: 7px;
 
   background: var(--surface);
 
   color: var(--text-secondary);
 
-  font-size: 11px;
+  font-size: 10px;
 
   font-weight: 750;
 }
 
-/* =========================
+/* ========================================
    TASK LIST
-========================= */
+======================================== */
 
 .task-list {
-  position: relative;
-
   flex: 1;
+
+  min-height: 0;
+
+  overflow-y: auto;
+
+  overflow-x: hidden;
+
+  padding: 3px 5px 5px 3px;
 
   display: flex;
 
   flex-direction: column;
 
-  gap: 10px;
+  gap: 9px;
 
-  min-height: 470px;
+  border-radius: 10px;
 
-  padding: 3px;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
 
-  border-radius: 12px;
-
-  transition: background 0.2s;
+  scrollbar-width: thin;
 }
 
-/* =========================
-   TASK
-========================= */
+/* Task-list scrollbar */
+
+.task-list::-webkit-scrollbar {
+  width: 7px;
+}
+
+.task-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.task-list::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+
+  border: 2px solid transparent;
+
+  background-clip: padding-box;
+
+  border-radius: 20px;
+}
+
+.task-list::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* ========================================
+   TASK CARD
+======================================== */
 
 .task {
   position: relative;
+
+  flex-shrink: 0;
 
   display: flex;
 
   align-items: center;
 
-  gap: 12px;
+  gap: 11px;
 
-  min-height: 62px;
+  min-height: 59px;
 
-  padding: 12px 12px 12px 14px;
+  padding: 11px;
 
   background: var(--surface);
 
   border: 1px solid var(--border);
 
-  border-radius: 12px;
+  border-radius: 11px;
 
-  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.05);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.045);
 
   cursor: grab;
 
@@ -625,16 +723,14 @@ body {
 }
 
 .task:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 
-  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.1);
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08);
 }
 
 .task:active {
   cursor: grabbing;
 }
-
-/* Dragging task */
 
 .task.dragging {
   opacity: 0.35;
@@ -642,25 +738,9 @@ body {
   transform: scale(0.98);
 }
 
-/* =========================
-   DROP INDICATOR
-========================= */
-
-.drop-indicator {
-  height: 4px;
-
-  margin: -5px 4px 5px;
-
-  border-radius: 10px;
-
-  background: var(--primary);
-
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary) 12%, transparent);
-}
-
-/* =========================
-   TASK STATUS BAR
-========================= */
+/* ========================================
+   TASK INDICATOR
+======================================== */
 
 .task-indicator {
   width: 4px;
@@ -684,9 +764,9 @@ body {
   background: var(--done);
 }
 
-/* =========================
+/* ========================================
    TASK TEXT
-========================= */
+======================================== */
 
 .task-text {
   flex: 1;
@@ -697,7 +777,7 @@ body {
 
   color: var(--text);
 
-  font-size: 14px;
+  font-size: 13px;
 
   line-height: 1.4;
 }
@@ -708,17 +788,19 @@ body {
   text-decoration: line-through;
 }
 
-/* =========================
+/* ========================================
    DELETE BUTTON
-========================= */
+======================================== */
 
 .delete-task {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+
+  height: 30px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   flex-shrink: 0;
@@ -731,7 +813,7 @@ body {
 
   color: var(--text-tertiary);
 
-  font-size: 19px;
+  font-size: 18px;
 
   cursor: pointer;
 
@@ -753,14 +835,32 @@ body {
   color: var(--danger);
 }
 
-/* =========================
+/* ========================================
+   DROP INDICATOR
+======================================== */
+
+.drop-indicator {
+  height: 4px;
+
+  flex-shrink: 0;
+
+  margin: -4px 4px 5px;
+
+  border-radius: 10px;
+
+  background: var(--primary);
+
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary) 12%, transparent);
+}
+
+/* ========================================
    EMPTY STATE
-========================= */
+======================================== */
 
 .empty-state {
   flex: 1;
 
-  min-height: 160px;
+  min-height: 130px;
 
   display: flex;
 
@@ -770,102 +870,250 @@ body {
 
   border: 2px dashed var(--border);
 
-  border-radius: 12px;
+  border-radius: 11px;
 
   color: var(--text-tertiary);
 
-  font-size: 12px;
-
-  pointer-events: none;
+  font-size: 11px;
 
   text-align: center;
+
+  pointer-events: none;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* ========================================
+   LARGE DESKTOP
+======================================== */
 
-@media (max-width: 950px) {
+@media (min-width: 1440px) {
+  .app {
+    width: min(1480px, 92%);
+
+    padding-top: 24px;
+  }
+
   .board {
-    grid-template-columns: 1fr;
+    gap: 22px;
   }
 
   .column {
-    min-height: 350px;
-  }
-
-  .task-list {
-    min-height: 220px;
+    padding: 19px;
   }
 }
 
-@media (max-width: 600px) {
-  .navbar {
-    height: 62px;
+/* ========================================
+   LAPTOP
+======================================== */
 
-    padding: 0 15px;
+@media (min-width: 769px) and (max-width: 1199px) {
+  .app {
+    width: 94%;
+  }
+
+  .board {
+    gap: 14px;
+  }
+
+  .column {
+    padding: 14px;
+  }
+
+  .task {
+    padding: 10px;
+
+    min-height: 56px;
+  }
+
+  .task-text {
+    font-size: 12.5px;
+  }
+
+  .add-btn {
+    padding: 0 17px;
+  }
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 64px;
+
+    padding: 0 20px;
   }
 
   .navbar h1 {
-    font-size: 18px;
-  }
-
-  .navbar-brand {
-    width: 34px;
-    height: 34px;
-  }
-
-  .theme-toggle {
-    width: 40px;
-    height: 40px;
+    font-size: 19px;
   }
 
   .app {
     width: 92%;
 
-    padding: 30px 0 45px;
+    height: auto;
+
+    min-height: 0;
+
+    padding: 18px 0 35px;
   }
 
-  .app-header {
-    align-items: flex-start;
+  .board {
+    grid-template-columns: 1fr;
 
     gap: 15px;
   }
 
-  .app-header h2 {
-    font-size: 27px;
+  .column {
+    min-height: 310px;
   }
 
-  .subtitle {
-    font-size: 13px;
+  .task-list {
+    min-height: 230px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 560px) {
+  .navbar {
+    height: 60px;
+
+    padding: 0 13px;
   }
 
-  .total-tasks {
-    min-width: 78px;
-
-    padding: 11px 10px;
+  .navbar h1 {
+    font-size: 17px;
   }
 
-  .total-tasks span {
-    font-size: 21px;
+  .navbar-brand {
+    width: 33px;
+
+    height: 33px;
+  }
+
+  .theme-toggle {
+    width: 39px;
+
+    height: 39px;
+  }
+
+  .app {
+    width: calc(100% - 24px);
+
+    padding: 13px 0 25px;
   }
 
   #taskForm {
     flex-direction: column;
+
+    padding: 7px;
+  }
+
+  .input-wrapper {
+    width: 100%;
+  }
+
+  #taskInput {
+    height: 49px;
+
+    padding-left: 14px;
+
+    padding-right: 135px;
+
+    font-size: 14px;
+  }
+
+  .total-tasks {
+    right: 42px;
   }
 
   .add-btn {
     width: 100%;
+
+    height: 48px;
+  }
+
+  .board {
+    gap: 12px;
   }
 
   .column {
-    padding: 15px;
+    padding: 13px;
+
+    min-height: 280px;
+  }
+
+  .column-title h2 {
+    font-size: 15px;
+  }
+
+  .task-list {
+    min-height: 200px;
+  }
+
+  .delete-task {
+    opacity: 1;
   }
 }
 
-/* =========================
+/* ========================================
+   VERY SMALL PHONES
+======================================== */
+
+@media (max-width: 360px) {
+  .navbar {
+    padding: 0 10px;
+  }
+
+  .navbar h1 {
+    font-size: 15px;
+  }
+
+  .navbar-brand {
+    width: 31px;
+
+    height: 31px;
+
+    font-size: 10px;
+  }
+
+  .theme-toggle {
+    width: 36px;
+
+    height: 36px;
+  }
+
+  .app {
+    width: calc(100% - 18px);
+  }
+
+  .total-tasks {
+    min-width: 60px;
+
+    right: 40px;
+
+    padding: 0 7px;
+  }
+
+  .total-tasks small {
+    display: none;
+  }
+
+  #taskInput {
+    padding-right: 110px;
+  }
+
+  .character-count {
+    display: none;
+  }
+}
+
+/* ========================================
    REDUCED MOTION
-========================= */
+======================================== */
 
 @media (prefers-reduced-motion: reduce) {
   *,

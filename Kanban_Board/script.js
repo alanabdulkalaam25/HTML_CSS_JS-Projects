@@ -42,11 +42,6 @@ let tasks = loadTasks();
 
 let draggedTaskId = null;
 
-/*
-    This object stores the current location
-    of the drop indicator.
-*/
-
 let dropTarget = null;
 
 /* =========================================
@@ -91,7 +86,7 @@ function saveTasks() {
 }
 
 /* =========================================
-   ADD TASK
+   CREATE TASK
 ========================================= */
 
 function createTask(text) {
@@ -105,10 +100,6 @@ function createTask(text) {
 
     status: "todo",
   };
-
-  /*
-        New tasks always start in To Do.
-    */
 
   tasks.push(task);
 
@@ -130,56 +121,7 @@ function deleteTask(id) {
 }
 
 /* =========================================
-   UPDATE TASK POSITION
-========================================= */
-
-function moveTask(taskId, newStatus, beforeTaskId = null) {
-  const taskIndex = tasks.findIndex((task) => task.id === taskId);
-
-  if (taskIndex === -1) {
-    return;
-  }
-
-  /*
-        Remove the task from its current
-        position first.
-    */
-
-  const [task] = tasks.splice(taskIndex, 1);
-
-  task.status = newStatus;
-
-  /*
-        Find the task before which the
-        dragged task should be inserted.
-    */
-
-  if (beforeTaskId) {
-    const targetIndex = tasks.findIndex((task) => task.id === beforeTaskId);
-
-    if (targetIndex !== -1) {
-      tasks.splice(targetIndex, 0, task);
-    } else {
-      tasks.push(task);
-    }
-  } else {
-    /*
-            No target means put it at
-            the bottom of that column.
-        */
-
-    const lastIndex = findLastTaskIndex(newStatus);
-
-    tasks.splice(lastIndex + 1, 0, task);
-  }
-
-  saveTasks();
-
-  renderTasks();
-}
-
-/* =========================================
-   FIND LAST TASK OF A STATUS
+   FIND LAST TASK INDEX
 ========================================= */
 
 function findLastTaskIndex(status) {
@@ -192,6 +134,50 @@ function findLastTaskIndex(status) {
   });
 
   return lastIndex;
+}
+
+/* =========================================
+   MOVE / REORDER TASK
+========================================= */
+
+function moveTask(taskId, newStatus, beforeTaskId = null) {
+  const taskIndex = tasks.findIndex((task) => task.id === taskId);
+
+  if (taskIndex === -1) {
+    return;
+  }
+
+  const [task] = tasks.splice(taskIndex, 1);
+
+  task.status = newStatus;
+
+  /*
+        Insert before the selected task.
+    */
+
+  if (beforeTaskId) {
+    const targetIndex = tasks.findIndex((task) => task.id === beforeTaskId);
+
+    if (targetIndex !== -1) {
+      tasks.splice(targetIndex, 0, task);
+    } else {
+      tasks.push(task);
+    }
+  } else {
+    /*
+            No task underneath the cursor,
+            therefore place it at the bottom
+            of the selected column.
+        */
+
+    const lastIndex = findLastTaskIndex(newStatus);
+
+    tasks.splice(lastIndex + 1, 0, task);
+  }
+
+  saveTasks();
+
+  renderTasks();
 }
 
 /* =========================================
@@ -215,7 +201,7 @@ function createTaskElement(task) {
 
   indicator.className = "task-indicator";
 
-  /* Task text */
+  /* Text */
 
   const text = document.createElement("p");
 
@@ -292,13 +278,8 @@ function renderTasks() {
   });
 
   /*
-        IMPORTANT:
-
-        We iterate over `tasks` in its exact
-        stored order.
-
-        Therefore the array order is also
-        the visual order of the cards.
+        The order of `tasks` is also the
+        visual order of the board.
     */
 
   tasks.forEach((task) => {
@@ -308,9 +289,7 @@ function renderTasks() {
       return;
     }
 
-    const taskElement = createTaskElement(task);
-
-    list.appendChild(taskElement);
+    list.appendChild(createTaskElement(task));
   });
 
   updateCounts();
@@ -323,17 +302,19 @@ function renderTasks() {
 ========================================= */
 
 function updateCounts() {
-  const todoTasks = tasks.filter((task) => task.status === "todo");
+  const todoCount = tasks.filter((task) => task.status === "todo").length;
 
-  const progressTasks = tasks.filter((task) => task.status === "progress");
+  const progressCount = tasks.filter(
+    (task) => task.status === "progress",
+  ).length;
 
-  const doneTasks = tasks.filter((task) => task.status === "done");
+  const doneCount = tasks.filter((task) => task.status === "done").length;
 
-  counts.todo.textContent = todoTasks.length;
+  counts.todo.textContent = todoCount;
 
-  counts.progress.textContent = progressTasks.length;
+  counts.progress.textContent = progressCount;
 
-  counts.done.textContent = doneTasks.length;
+  counts.done.textContent = doneCount;
 
   totalTasksElement.textContent = tasks.length;
 }
@@ -371,7 +352,7 @@ function createEmptyStates() {
 }
 
 /* =========================================
-   FIND DROP POSITION
+   FIND DROP TARGET
 ========================================= */
 
 function getDropTarget(list, mouseY) {
@@ -385,11 +366,6 @@ function getDropTarget(list, mouseY) {
     const box = taskElement.getBoundingClientRect();
 
     const offset = mouseY - (box.top + box.height / 2);
-
-    /*
-            We want the closest task whose
-            center is below the mouse.
-        */
 
     if (offset < 0 && offset > closestOffset) {
       closestOffset = offset;
@@ -440,13 +416,13 @@ function clearDropIndicator() {
 }
 
 /* =========================================
-   DRAG OVER COLUMNS
+   DRAG & DROP
 ========================================= */
 
 document.querySelectorAll(".column").forEach((column) => {
   const list = column.querySelector(".task-list");
 
-  /* Drag enters */
+  /* Drag enter */
 
   column.addEventListener("dragenter", (event) => {
     event.preventDefault();
@@ -463,17 +439,12 @@ document.querySelectorAll(".column").forEach((column) => {
 
     column.classList.add("drag-over");
 
-    /*
-                    Determine exactly where
-                    the card should be inserted.
-                */
-
     const target = getDropTarget(list, event.clientY);
 
     showDropIndicator(list, target);
   });
 
-  /* Drag leaves */
+  /* Drag leave */
 
   column.addEventListener("dragleave", (event) => {
     if (!column.contains(event.relatedTarget)) {
@@ -483,9 +454,7 @@ document.querySelectorAll(".column").forEach((column) => {
     }
   });
 
-  /* =================================
-           DROP
-        ================================= */
+  /* Drop */
 
   column.addEventListener("drop", (event) => {
     event.preventDefault();
@@ -579,24 +548,11 @@ function applyTheme(theme) {
 function loadTheme() {
   const savedTheme = localStorage.getItem(THEME_KEY);
 
-  if (savedTheme === "dark") {
-    applyTheme("dark");
+  if (savedTheme === "dark" || savedTheme === "light") {
+    applyTheme(savedTheme);
 
     return;
   }
-
-  if (savedTheme === "light") {
-    applyTheme("light");
-
-    return;
-  }
-
-  /*
-        First visit:
-
-        Follow the operating system's
-        preferred color scheme.
-    */
 
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
@@ -614,7 +570,7 @@ themeToggle.addEventListener("click", () => {
 });
 
 /* =========================================
-   INITIALIZE
+   INITIALIZATION
 ========================================= */
 
 loadTheme();
