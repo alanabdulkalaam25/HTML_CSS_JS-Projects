@@ -7,6 +7,64 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <div class="container">
+      <form id="registerationForm">
+        <h1>Register</h1>
+
+        <!-- username -->
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Enter username"
+            autocomplete="off"
+          />
+          <small></small>
+        </div>
+
+        <!-- email -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter email"
+            autocomplete="off"
+          />
+          <small></small>
+        </div>
+
+        <!-- password -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Enter password"
+          />
+          <small></small>
+        </div>
+
+        <!-- confirm password -->
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input
+            type="password"
+            name="confirmPassword"
+            id="confirmPassword"
+            placeholder="Enter password"
+          />
+          <small></small>
+        </div>
+
+        <!-- submit button -->
+        <button type="submit">Register</button>
+      </form>
+    </div>
     <script src="./script.js"></script>
   </body>
 </html>
