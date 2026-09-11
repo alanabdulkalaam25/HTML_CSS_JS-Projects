@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team Members Showcase - HTML/CSS/JS Projects</title>
     <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
@@ -31,7 +32,7 @@
             <div class="profile-img">
               <img
                 src="https://randomuser.me/api/portraits/men/32.jpg"
-                alt="Team Member"
+                alt="Portrait of Alex Morgan"
               />
             </div>
             <h3>Alex Morgan</h3>
@@ -60,7 +61,7 @@
             <div class="profile-img">
               <img
                 src="https://randomuser.me/api/portraits/women/44.jpg"
-                alt="Team Member"
+                alt="Portrait of Sarah Johnson"
               />
             </div>
             <h3>Sarah Johnson</h3>
@@ -89,7 +90,7 @@
             <div class="profile-img">
               <img
                 src="https://randomuser.me/api/portraits/men/46.jpg"
-                alt="Team Member"
+                alt="Portrait of David Chen"
               />
             </div>
             <h3>David Chen</h3>
@@ -118,7 +119,7 @@
             <div class="profile-img">
               <img
                 src="https://randomuser.me/api/portraits/women/65.jpg"
-                alt="Team Member"
+                alt="Portrait of Emily Wilson"
               />
             </div>
             <h3>Emily Wilson</h3>
@@ -147,7 +148,7 @@
             <div class="profile-img">
               <img
                 src="https://randomuser.me/api/portraits/men/75.jpg"
-                alt="Team Member"
+                alt="Portrait of Michael Torres"
               />
             </div>
             <h3>Michael Torres</h3>
@@ -176,7 +177,7 @@
             <div class="profile-img">
               <img
                 src="https://randomuser.me/api/portraits/women/32.jpg"
-                alt="Team Member"
+                alt="Portrait of Jennifer Lee"
               />
             </div>
             <h3>Jennifer Lee</h3>
@@ -197,15 +198,92 @@
             </div>
           </div>
         </div>
+
+        <!-- TEAM MEMBER 7 -->
+        <div class="team-card">
+          <div class="card-top">
+            <div class="profile-bg"></div>
+            <div class="profile-img">
+              <img
+                src="https://randomuser.me/api/portraits/women/47.jpg"
+                alt="Portrait of Olivia Bennett"
+              />
+            </div>
+            <h3>Olivia Bennett</h3>
+            <p class="role">Research Lead</p>
+          </div>
+
+          <div class="card-bottom">
+            <p class="bio">
+              Turns customer insights and emerging trends into thoughtful
+              product decisions that move the team forward.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-icon" aria-label="Olivia on LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Olivia on Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Olivia on GitHub"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- TEAM MEMBER 8 -->
+        <div class="team-card">
+          <div class="card-top">
+            <div class="profile-bg"></div>
+            <div class="profile-img">
+              <img
+                src="https://randomuser.me/api/portraits/men/68.jpg"
+                alt="Portrait of Noah Williams"
+              />
+            </div>
+            <h3>Noah Williams</h3>
+            <p class="role">Operations Lead</p>
+          </div>
+
+          <div class="card-bottom">
+            <p class="bio">
+              Builds reliable systems and clear processes so creative ideas can
+              become excellent work, every day.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-icon" aria-label="Noah on LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Noah on Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Noah on GitHub"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="team-cta">
-        <h2>Want to join our team?</h2>
-        <p>
-          We're always looking for talented individuals to join our growing
-          team.
-        </p>
+        <div class="cta-copy">
+          <h2>Want to join our team?</h2>
+          <p>
+            We're always looking for talented individuals to join our growing
+            team.
+          </p>
+        </div>
         <a href="#" class="cta-button"> View Open Positions </a>
+      </div>
+    </div>
+
+    <div class="theme-switcher" aria-label="Theme preference">
+      <span class="theme-label">Theme</span>
+      <div class="theme-options" role="group" aria-label="Choose theme">
+        <button type="button" data-theme-choice="dark">Dark</button>
+        <button type="button" data-theme-choice="light">Light</button>
+        <button type="button" data-theme-choice="system">System</button>
       </div>
     </div>
   </body>
