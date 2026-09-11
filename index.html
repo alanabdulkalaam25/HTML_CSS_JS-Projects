@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>HTML, CSS & JavaScript Projects</title>
+
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #ffffff;
+        color: #222222;
+        padding: 40px 20px;
+      }
+
+      .container {
+        width: min(1200px, 100%);
+        margin: auto;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 35px;
+        font-size: 32px;
+      }
+
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .card {
+        display: flex;
+        flex-direction: column;
+
+        min-height: 220px;
+        padding: 22px;
+
+        border: 1px solid #dddddd;
+        border-radius: 10px;
+
+        background: #ffffff;
+      }
+
+      .card h2 {
+        margin-bottom: 10px;
+        font-size: 20px;
+      }
+
+      .card p {
+        color: #666666;
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: auto;
+      }
+
+      .buttons a {
+        flex: 1;
+
+        padding: 9px 12px;
+
+        border: 1px solid #cccccc;
+        border-radius: 6px;
+
+        text-align: center;
+        text-decoration: none;
+
+        font-size: 14px;
+        font-weight: 600;
+
+        transition: 0.15s ease;
+      }
+
+      .demo {
+        background: #222222;
+        color: #ffffff;
+        border-color: #222222 !important;
+      }
+
+      .demo:hover {
+        opacity: 0.85;
+      }
+
+      .source {
+        background: #ffffff;
+        color: #222222;
+      }
+
+      .source:hover {
+        background: #f3f3f3;
+      }
+
+      /* =========================================================
+           DARK MODE
+           Automatically follows the operating-system theme.
+        ========================================================== */
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          background: #0f1115;
+          color: #eeeeee;
+        }
+
+        .card {
+          background: #15181d;
+          border-color: #2b3038;
+        }
+
+        .card p {
+          color: #9da4ae;
+        }
+
+        .buttons a {
+          border-color: #3a404a;
+        }
+
+        .demo {
+          background: #eeeeee;
+          color: #111111;
+          border-color: #eeeeee !important;
+        }
+
+        .source {
+          background: #15181d;
+          color: #eeeeee;
+        }
+
+        .source:hover {
+          background: #1d2128;
+        }
+      }
+
+      /* =========================================================
+           RESPONSIVE
+        ========================================================== */
+
+      @media (max-width: 900px) {
+        .projects {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 25px 15px;
+        }
+
+        h1 {
+          font-size: 26px;
+          margin-bottom: 25px;
+        }
+
+        .projects {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>HTML, CSS & JavaScript Projects</h1>
+
+      <div class="projects">
+        <!-- 01 -->
+        <div class="card">
+          <h2>3D Image Gallery</h2>
+          <p>
+            An interactive image gallery with a 3D-style visual presentation and
+            smooth effects.
+          </p>
+
+          <div class="buttons">
+            <a class="demo" href="./3D_Image_Gallery/" target="_blank">
+              Live Demo
+            </a>
+
+            <a
+              class="source"
+              href="https://github.com/alanabdulkalaam25/HTML_CSS_JS-Projects/tree/main/3D_Image_Gallery"
+              target="_blank"
+            >
+              Source
+            </a>
+          </div>
+        </div>
+
+        <!-- 02 -->
+        <div class="card">
+          <h2>BMI Calculator</h2>
+          <p>Calculate Body Mass Index using height and weight values.</p>
+
+          <div class="buttons">
+            <a class="demo" href="./BMI_Calculator/" target="_blank">
+              Live Demo
+            </a>
+
+            <a
+              class="source"
+              href="https://github.com/alanabdulkalaam25/HTML_CSS_JS-Projects/tree/main/BMI_Calculator"
+              target="_blank"
+            >
+              Source
+            </a>
+          </div>
+        </div>
+
+        <!-- 03 -->
+        <div class="card">
+          <h2>Bookmark Saver</h2>
+          <p>Save and manage website bookmarks directly in the browser.</p>
+
+          <div class="buttons">
+            <a class="demo" href="./Bookmark_Saver/" target="_blank">
+              Live Demo
+            </a>
+
+            <a
+              class="source"
+              href="https://github.com/alanabdulkalaam25/HTML_CSS_JS-Projects/tree/main/Bookmark_Saver"
+              target="_blank"
+            >
+              Source
+            </a>
+          </div>
+        </div>
+
+        <!-- 04 -->
+        <div class="card">
+          <h2>Contact Form</h2>
+          <p>
+            A simple responsive contact form interface with client-side
+            interactions.
+          </p>
+
+          <div class="buttons">
+            <a class="demo" href="./Contact_Form/" target="_blank">
+              Live Demo
+            </a>
+
+            <a
+              class="source"
+              href="https://github.com/alanabdulkalaam25/HTML_CSS_JS-Projects/tree/main/Contact_Form"
+              target="_blank"
+            >
+              Source
+            </a>
+          </div>
+        </div>
+
+        <!-- 05 -->
+        <div class="card">
+          <h2>Currency Converter</h2>
+          <p>
+            Convert values between different currencies using exchange-rate
+            data.
+          </p>
+
+          <div class="buttons">
+            <a class="demo" href="./Currency_Converter/" target="_blank">
+              Live Demo
+            </a>
+
+            <a
+              class="source"
+              href="https://github.com/alanabdulkalaam25/HTML_CSS_JS-Projects/tree/main/Currency_Converter"
+              target="_blank"
+            >
+              Source
+            </a>
+          </div>
+        </div>
+
+        <!-- 06 -->
+        <div class="card">
+          <h2>Dice Roll Simulator</h2>
+          <p>Roll virtual dice and generate random results using JavaScript.</p>
+
+          <div class="buttons">
+            <a class="demo" href="./Dice-Roll-Simulator/" target="_blank">
+              Live Demo
+            </a>
+
+            <a
+              class="source"
+              href="https://github.com/alanabdulkalaam25/HTML_CSS_JS-Projects/tree/main/Dice-Roll-Simulator"
+              target="_blank"
+            >
+              Source
+            </a>
+          </div>
+        </div>
+
+        <!-- 07 -->
+        <div class="card">
+          <h2>Dynamic Mini Calendar</h2>
+          <p>A dynamic calendar displaying the current date, month and year.</p>
+
+          <div class="buttons">
+            <a class="demo" href="./Dynamic_Mini_Calendar/" target="_blank">
+              Live Demo
+            </a>
+
+            <a
+              class="source"
+              href="https://github.com/alanabdulkalaam25/HTML_CSS_JS-Projects/tree/main/Dynamic_Mini_Calendar"
+              target="_blank"
+            >
+              Source
+            </a>
+          </div>
+        </div>
+
+        <!-- 08 -->
+        <div class="card">
+          <h2>English Dictionary</h2>
+          <p>
+            Search for English words and display their meanings and definitions.
+          </p>
+
+          <div class="buttons">
+            <a class="demo" href="./English_Dictionary/" target="_blank">
+              Live Demo
+            </a>
+
+            <a
+              class="source"
+              href="https://github.com/alanabdulkalaam25/HTML_CSS_JS-Projects/tree/main/English_Dictionary"
+              target="_blank"
+            >
+              Source
+            </a>
+          </div>
+        </div>
+
+        <!-- 09 -->
+        <div class="card">
+          <h2>Expense Tracker</h2>
+          <p>
+            Track income and expenses through a simple browser-based interface.
+          </p>
+
+          <div class="buttons">
+            <a class="demo" href="./Expense_Tracker/" target="_blank">
+              Live Demo
+            </a>
+
+            <a
+              class="source"
+              href="https://github.com/alanabdulkalaam25/HTML_CSS_JS-Projects/tree/main/Expense_Tracker"
+              target="_blank"
+            >
+              Source
+            </a>
+          </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="card">
+          <h2>Form Validation</h2>
+          <p>
+            Validate form inputs and provide immediate feedback using
+            JavaScript.
+          </p>
+
+          <div class="buttons">
+            <a class="demo" href="./Form_Validation/" target="_blank">
+              Live Demo
+            </a>
+
+            <a
+              class="source"
+              href="https://github.com/alanabdulkalaam25/HTML_CSS_JS-Projects/tree/main/Form_Validation"
+              target="_blank"
+            >
+              Source
+            </a>
+          </div>
+        </div>
+
+        <!-- 11 -->
+        <div class="card">
+          <h2>GitHub Finder</h2>
+          <p>Search for GitHub users and display their profile information.</p>
+
+          <div class="buttons">
+            <a class="demo" href="./Github_Finder/" target="_blank">
+              Live Demo
+            </a>
+
+            <a
+              class="source"
+              href="https://github.com/alanabdulkalaam25/HTML_CSS_JS-Projects/tree/main/Github_Finder"
+              target="_blank"
+            >
+              Source
+            </a>
+          </div>
+        </div>
+
+        <!-- 12 -->
+        <div class="card">
+          <h2>Image Slider</h2>
+          <p>
+            An interactive image slider with navigation and transition effects.
+          </p>
+
+          <div class="buttons">
+            <a class="demo" href="./Image_Slider/" target="_blank">
+              Live Demo
+            </a>
+
+            <a
+              class="source"
+              href="https://github.com/alanabdulkalaam25/HTML_CSS_JS-Projects/tree/main/Image_Slider"
+              target="_blank"
+            >
+              Source
+            </a>
+          </div>
+        </div>
+
+        <!-- 13 -->
+        <div class="card">
+          <h2>Kanban Board</h2>
+          <p>A simple task management board based on the Kanban workflow.</p>
+
+          <div class="buttons">
+            <a class="demo" href="./Kanban_Board/" target="_blank">
+              Live Demo
+            </a>
+
+            <a
+              class="source"
+              href="https://github.com/alanabdulkalaam25/HTML_CSS_JS-Projects/tree/main/Kanban_Board"
+              target="_blank"
+            >
+              Source
+            </a>
+          </div>
+        </div>
+
+        <!-- 14 -->
+        <div class="card">
+          <h2>New Year Countdown</h2>
+          <p>
+            A countdown timer showing the remaining time until the New Year.
+          </p>
+
+          <div class="buttons">
+            <a class="demo" href="./New_Year_Countdown/" target="_blank">
+              Live Demo
+            </a>
+
+            <a
+              class="source"
+              href="https://github.com/alanabdulkalaam25/HTML_CSS_JS-Projects/tree/main/New_Year_Countdown"
+              target="_blank"
+            >
+              Source
+            </a>
+          </div>
+        </div>
+
+        <!-- 15 -->
+        <div class="card">
+          <h2>Password Generator</h2>
+          <p>Generate random passwords using configurable character options.</p>
+
+          <div class="buttons">
+            <a class="demo" href="./Password_Generator/" target="_blank">
+              Live Demo
+            </a>
+
+            <a
+              class="source"
+              href="https://github.com/alanabdulkalaam25/HTML_CSS_JS-Projects/tree/main/Password_Generator"
+              target="_blank"
+            >
+              Source
+            </a>
+          </div>
+        </div>
+
+        <!-- 16 -->
+        <div class="card">
+          <h2>Pricing Cards</h2>
+          <p>
+            Responsive pricing cards for displaying different subscription
+            plans.
+          </p>
+
+          <div class="buttons">
+            <a class="demo" href="./Pricing_Cards/" target="_blank">
+              Live Demo
+            </a>
+
+            <a
+              class="source"
+              href="https://github.com/alanabdulkalaam25/HTML_CSS_JS-Projects/tree/main/Pricing_Cards"
+              target="_blank"
+            >
+              Source
+            </a>
+          </div>
+        </div>
+
+        <!-- 17 -->
+        <div class="card">
+          <h2>Q&A Accordion</h2>
+          <p>An expandable question-and-answer accordion component.</p>
+
+          <div class="buttons">
+            <a class="demo" href="./Q%26A_Accordion/" target="_blank">
+              Live Demo
+            </a>
+
+            <a
+              class="source"
+              href="https://github.com/alanabdulkalaam25/HTML_CSS_JS-Projects/tree/main/Q%26A_Accordion"
+              target="_blank"
+            >
+              Source
+            </a>
+          </div>
+        </div>
+
+        <!-- 18 -->
+        <div class="card">
+          <h2>Random Color Generator</h2>
+          <p>
+            Generate random colors and display their corresponding color values.
+          </p>
+
+          <div class="buttons">
+            <a class="demo" href="./Random_Color_Generator/" target="_blank">
+              Live Demo
+            </a>
+
+            <a
+              class="source"
+              href="https://github.com/alanabdulkalaam25/HTML_CSS_JS-Projects/tree/main/Random_Color_Generator"
+              target="_blank"
+            >
+              Source
+            </a>
+          </div>
+        </div>
+
+        <!-- 19 -->
+        <div class="card">
+          <h2>Random Image Feed</h2>
+          <p>Dynamically loads random images into a responsive image feed.</p>
+
+          <div class="buttons">
+            <a class="demo" href="./Random_Image_Feed/" target="_blank">
+              Live Demo
+            </a>
+
+            <a
+              class="source"
+              href="https://github.com/alanabdulkalaam25/HTML_CSS_JS-Projects/tree/main/Random_Image_Feed"
+              target="_blank"
+            >
+              Source
+            </a>
+          </div>
+        </div>
+
+        <!-- 20 -->
+        <div class="card">
+          <h2>Random Password Generator</h2>
+          <p>Generate random password strings with JavaScript.</p>
+
+          <div class="buttons">
+            <a class="demo" href="./Random_Passwd_Generator/" target="_blank">
+              Live Demo
+            </a>
+
+            <a
+              class="source"
+              href="https://github.com/alanabdulkalaam25/HTML_CSS_JS-Projects/tree/main/Random_Passwd_Generator"
+              target="_blank"
+            >
+              Source
+            </a>
+          </div>
+        </div>
+
+        <!-- 21 -->
+        <div class="card">
+          <h2>Random Quote Generator</h2>
+          <p>
+            Generate and display random quotes through an interactive interface.
+          </p>
+
+          <div class="buttons">
+            <a class="demo" href="./Random_Quote_Generator/" target="_blank">
+              Live Demo
+            </a>
+
+            <a
+              class="source"
+              href="https://github.com/alanabdulkalaam25/HTML_CSS_JS-Projects/tree/main/Random_Quote_Generator"
+              target="_blank"
+            >
+              Source
+            </a>
+          </div>
+        </div>
+
+        <!-- 22 -->
+        <div class="card">
+          <h2>RGB Screen Tester</h2>
+          <p>
+            Test screen colors and inspect RGB values through a simple
+            interface.
+          </p>
+
+          <div class="buttons">
+            <a class="demo" href="./RGB_Screen_Tester/" target="_blank">
+              Live Demo
+            </a>
+
+            <a
+              class="source"
+              href="https://github.com/alanabdulkalaam25/HTML_CSS_JS-Projects/tree/main/RGB_Screen_Tester"
+              target="_blank"
+            >
+              Source
+            </a>
+          </div>
+        </div>
+
+        <!-- 23 -->
+        <div class="card">
+          <h2>Team Members Showcase</h2>
+          <p>
+            A responsive layout for displaying team members and their
+            information.
+          </p>
+
+          <div class="buttons">
+            <a class="demo" href="./Team_Members_Showcase/" target="_blank">
+              Live Demo
+            </a>
+
+            <a
+              class="source"
+              href="https://github.com/alanabdulkalaam25/HTML_CSS_JS-Projects/tree/main/Team_Members_Showcase"
+              target="_blank"
+            >
+              Source
+            </a>
+          </div>
+        </div>
+
+        <!-- 24 -->
+        <div class="card">
+          <h2>ToDo List</h2>
+          <p>
+            A simple task manager for creating, completing and managing todo
+            items.
+          </p>
+
+          <div class="buttons">
+            <a class="demo" href="./ToDo_List/" target="_blank"> Live Demo </a>
+
+            <a
+              class="source"
+              href="https://github.com/alanabdulkalaam25/HTML_CSS_JS-Projects/tree/main/ToDo_List"
+              target="_blank"
+            >
+              Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
