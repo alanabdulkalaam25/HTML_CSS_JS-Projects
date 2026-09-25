@@ -27,7 +27,9 @@ form.addEventListener("submit", (e) => {
   }
 
   if (isFormValid) {
-    alert("Registration Successfull!");
+    alert(
+      "Validation successful! This is a frontend demo; no account was created.",
+    );
     form.reset();
 
     document.querySelectorAll(".form-group").forEach((group) => {
