@@ -210,6 +210,14 @@ button:active {
   gap: 10px;
 }
 
+.demo-notice {
+  margin: 0 0 20px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
 @media (max-width: 600px) {
   .form-container {
     padding: 25px;

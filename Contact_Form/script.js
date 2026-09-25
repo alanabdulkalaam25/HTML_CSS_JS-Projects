@@ -9,8 +9,8 @@ function handleSubmit(event) {
 			<div class="success-icon">
 				<i class="fas fa-check"></i>
 			</div>
-			<h1>Message Sent!</h1>
-			<p>Thank you for reaching out. We'll get back to you soon.</p>
+			<h1>Form Submitted Successfully!</h1>
+			<p>This is a frontend demo. No message was actually sent.</p>
 			<button type="button" class="submit-another-button">
 				<span>Submit Another Form</span>
 				<i class="fas fa-rotate-right"></i>
